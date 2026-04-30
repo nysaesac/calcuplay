@@ -1,0 +1,22 @@
+<resources>
+    <!-- Nombre de la app -->
+    <string name="app_name">Calculadora de Consumo</string>
+
+    <!-- Título principal -->
+    <string name="titulo_calculadora">Calculadora de Consumo</string>
+
+    <!-- Labels de los campos -->
+    <string name="label_corriente">Corriente</string>
+    <string name="label_voltaje">Voltaje (V)</string>
+    <string name="label_precio_kwh">Precio kWh (S/.)</string>
+    <string name="label_tiempo">Tiempo</string>
+
+    <!-- Botón calcular -->
+    <string name="btn_calcular">Calcular</string>
+
+    <!-- Mensajes de error -->
+    <string name="error_datos_invalidos">Por favor ingresa datos válidos.</string>
+
+    <!-- Resultado inicial -->
+    <string name="resultado_inicial">Introduce los datos y presiona "Calcular".</string>
+</resources>
