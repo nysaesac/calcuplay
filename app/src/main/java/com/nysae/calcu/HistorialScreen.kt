@@ -83,10 +83,8 @@ fun HistorialScreen(
 
     if (!isPro.value) {
         LaunchedEffect(historial) {
-            delay(5000)
+            delay(8000) // ⏱️ deja tiempo para ver historial + banner
             showProMessage = true
-            delay(5000)
-            onVolver()
         }
     }
 
@@ -120,7 +118,10 @@ fun HistorialScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        BannerAd(isPro = isPro.value)
+        BannerAd(
+            isPro = isPro.value,
+            modifier = Modifier.fillMaxWidth()
+        )
 
         Spacer(modifier = Modifier.height(12.dp))
 

@@ -372,7 +372,12 @@ fun ClienteScreen(
                 Text(idioma.texto("continuar"))
             }
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // 🔥 BANNER MOVIDO ARRIBA
+            BannerAd(isPro = isPro.value)
+
+            Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 text = idioma.texto("instruccion1") + "\n" +
@@ -383,15 +388,10 @@ fun ClienteScreen(
             )
 
             Spacer(modifier = Modifier.height(24.dp))
-
-            BannerAd(isPro = isPro.value)
-
-            Spacer(modifier = Modifier.height(12.dp))
         }
 
 
-//            ⭐⭐ MENÚ LATERAL SUPERPUESTO ⭐⭐
-//---------------------------------------------------------------------
+//            ⭐⭐ MENÚ LATERAL SUPERPUESTO ⭐⭐--------------
         if (menuAbierto) {
             val idioma = LocalIdiomaViewModel.current
             Box(

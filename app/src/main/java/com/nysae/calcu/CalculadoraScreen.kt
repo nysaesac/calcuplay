@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import androidx.compose.ui.text.style.TextAlign
 
+
 fun getCurrencySymbol(moneda: String = "PEN"): String {
     return when (moneda.uppercase(Locale.getDefault())) {
         "PEN" -> "S/."
@@ -279,14 +280,22 @@ fun CalculadoraScreen(
             }
             Spacer(modifier = Modifier.height(10.dp))   // ⭐ espacio perfecto
 
-            // ===================== CRÉDITOS =====================
+            // ===================== CRÉDITOS + BANNER =====================
             if (!isPro.value) {
+
                 Text(
                     text = "${idioma.texto("creditosDisponibles")} $creditos",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     color = if (creditos > 0) Color(0xFF2E7D32) else Color.Red,
-                    modifier = Modifier.padding(bottom = 8.dp)
+                    modifier = Modifier.padding(bottom = 6.dp)
+                )
+
+                BannerAd(
+                    isPro = isPro.value,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 6.dp)
                 )
             }
 
@@ -483,9 +492,13 @@ ${idioma.texto("costoMes")}: $currencySymbol ${"%.2f".format(costoMensual)}
                     }
                 }
 
-                Spacer(Modifier.height(12.dp))
-                BannerAd(isPro = isPro.value)
-                Spacer(Modifier.height(12.dp))
+                // ⭐⭐⭐ AQUI VA EL BANNER ⭐⭐⭐
+                BannerAd(
+                    isPro = isPro.value,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 6.dp)
+                )
             }
 
 
